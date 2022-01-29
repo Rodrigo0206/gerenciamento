@@ -26,6 +26,9 @@ public class UnicaEntradaServlet extends HttpServlet {
 		
 		String nomeDaClasse = "br.com.alura.gerenciador.acao." + paramAcao;
 		
+		Class classe = Class.forName(nomeDaClasse); // carrega a classe com o nome
+		object obj = classe.newInstance();
+		String nome = obj.executa(request, response);
 		
 		//paramAcao.executa(req,res)
 		
